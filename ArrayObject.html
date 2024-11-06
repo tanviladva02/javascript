@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var student = [
+            {
+                name : "Nency",
+                no : 1,
+                s1 : 80,
+                s2 : 90
+            },
+            {
+                name : "Hetal",
+                no : 2,
+                s1 : 60,
+                s2 : 76
+            },
+            {
+                name : "Urvisha",
+                no : 3,
+                s1 : 30,
+                s2 : 55
+            }
+        ]
+
+        for(var i = 0; i < student.length; i++)
+        {
+            console.log("name = "+student[i].name);
+            console.log("no = "+student[i].no);
+            console.log("s1 = "+student[i].s1);
+            console.log("s2 = "+student[i].s2);
+            var total = student[i].s1 + student[i].s2;
+            console.log("total = "+total);
+            var avg = total / 2;
+            console.log("avg = "+avg+"%");
+
+            if(avg >=35 && avg<50)
+            {
+                console.log("You got C Grade ... ");
+            }
+            else if(avg >=50 &&  avg<75)
+            {
+                console.log("You got B Grade ... ");
+            }
+            else if(avg >=75 && avg<90)
+            {
+                console.log("You got A Grade ... ");
+            }
+            else if(avg>=90)
+            {
+                console.log("You got A+ Grade ... ");
+            }
+            else{
+                console.log("You Failed ... ");
+            }
+
+            console.log("-------------------------");
+        }
+
+    </script>
+    
+</body>
+</html>

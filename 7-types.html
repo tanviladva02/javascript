@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+
+         
+        // 1) Nested Function
+
+        // build function in other function
+
+        // function outer()
+        // {
+        //     var a = 10;
+        //     console.log("a = "+a);
+
+        //     function inner()
+        //     {
+        //         var b = 20;
+        //         console.log("b = "+b);
+        //     }
+        //     inner();
+        // }
+        // outer();
+
+        // 2) Call Back Function
+
+        // function call in other function
+
+        // function abc(name,age)
+        // {
+        //     console.log("i am "+name);
+        //     age();
+        // }
+        // abc("Tanvi",xyz);
+        // function xyz(){
+        //     console.log("I am 18 year old");
+        // }
+
+        // 3) Clouser function
+
+        // for attaching global variable to the inner scope
+
+        // var a = 10;
+        // function outer()
+        // {
+        //     var b = 20;
+        //         function inner(){
+        //             var c = 30;
+        //             return a + b + c;
+        //         }
+        //     console.log("Addition is = "+inner());    
+        // }
+        // outer();
+
+        // 4)IIFE
+
+        // Immidietly declare and call the function
+
+        // (function(){
+        //     var a = 10;
+        //     var b = 20;
+        //     var ans = a + b;
+        //     console.log("addition is = "+ans);
+        // })();
+
+        // 5)Recursion
+
+        // function call itself
+
+        // function demo(n){
+            
+        //     if(n==11)
+        //     {
+        //         return 11;
+        //     }
+        //     console.log("Hello world "+n);
+        //     demo(n+1);
+        // }
+        // demo(1);
+
+        function demo(n){
+
+            if(n==105)
+            {
+                return 105;
+            }
+            console.log(n);
+            demo(n+5);
+        }
+        demo(0);
+
+        // 6) Arrow function
+
+        // using => as a keyword
+
+        // var abc = () =>{
+        //     console.log("Hello world");
+        // }
+        // abc();
+
+        // 7) Function as a variable
+
+        // var abc = function(){
+        //     console.log("Hello world");
+        // }
+        // abc();
+
+    </script>
+
+
+</body>
+</html>

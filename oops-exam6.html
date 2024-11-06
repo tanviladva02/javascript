@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class grandfather{
+            constructor(age){
+                this.age = age;
+            }
+        }
+        class father extends grandfather{
+            constructor(age,age1){
+                super (age);
+                this.age1 = age1;
+                
+            }
+        }
+        class son extends father{
+            constructor(age,age1,age2){
+                super(age,age1)
+                this.age2 = age2;
+                
+            }
+            get(){
+                console.log("Age of gradfather is =" + this.age);
+                console.log("Age of father is =" + this.age1);
+                console.log("Age of son is =" + this.age2);
+            }
+        }
+
+
+
+        var abc = new son(70,50,30);
+        abc.get();
+
+    </script>
+    
+</body>
+</html>

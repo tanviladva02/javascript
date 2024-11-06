@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th><input type="text" placeholder="Enter Name" id="name"></th>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <th><input type="email" placeholder="Enter Email" id="mail"></th>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <th><input type="text" placeholder="Enter Age" id="age"></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><input type="button" value="insert" onclick="setdata()"></th>
+        </tr>
+    </table>
+
+    <div id="res"></div>
+    
+
+
+    <script>
+
+        var employee = [
+            {
+                name : "palak babariya",
+                email : "palakbabariya01@gmail.com",
+                age : 18
+            },
+            {
+                name : "grishma navadiya",
+                email : "grishupatel09@gmail.com",
+                age : 19
+            },
+            {
+                name : "srushti tejani",
+                email : "tejanisrushti089@gmail.com",
+                age : 17
+            }
+        ]
+
+
+       function setdata(){
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('mail').value;
+            var age = document.getElementById('age').value;
+
+            var insert = {
+                name : name,
+                email : email,
+                age : age
+            }
+                
+            employee.push(insert);
+            var employeeData = JSON.stringify(employee);
+            localStorage.setItem('employee' , employeeData);
+
+            var name = document.getElementById('name').value = "";
+            var mail = document.getElementById('mail').value = "";
+            var age = document.getElementById('age').value = "";
+ 
+
+            getdata();
+
+       }
+
+       function getdata()
+       {
+            var viewdata = localStorage.getItem('employee');
+            var view = JSON.parse(viewdata);
+
+            var data = "<table><tr><th>Name</th><th>Email</th><th>Age</th><th>Delete</th><th>Edit</th></tr>";
+
+            for(var i = 0; i<view.length; i++){
+                data += `<tr>`;
+                data +=  `<th>${view[i]['name']}</th>`;
+                data += `<th>${view[i]['email']}</th>`;
+                data += `<th>${view[i]['age']}</th>`;
+                data += `</tr>`;
+            }    
+
+            data += `</table>`;
+
+            document.getElementById('res').innerHTML = data;
+       }
+       getdata();
+
+    </script>
+
+</body>
+</html>

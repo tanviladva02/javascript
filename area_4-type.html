@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //1) WITH ARGUMENT , WITH RETURNTYPE
+
+        function circle(r)
+        {
+            var ans = 3.14 * r * r;
+            return ans;
+        }
+
+        console.log("Area of circle is = "+circle(10));
+
+        // 2) WITH ARGUMENT , WITHOUT RETURNTYPE
+
+        function traingle(l,h)
+        {
+            var ans = 0.5 * l * h;
+            console.log("Area of traingle  is = "+ans);
+        }
+
+        traingle(20,10);
+
+        // 3) WITHOUT ARGUMENT , WITH RETURNTYPE
+
+        function rectangle()
+        {
+            var le = 10,b = 20;
+            var ans = le * b;
+            return ans;
+        }
+
+        console.log("Area of Rectangle is = "+rectangle());
+
+        // 4) WITHOUT ARGUMENT , WITHOUT RETURNTYPE
+
+        function square()
+        {
+            var c = 100;
+            var ans = c * c;
+            console.log("Area of square is = "+ans);
+        }
+
+        square();
+
+    </script>
+
+</body>
+</html>

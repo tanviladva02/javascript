@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border="">
+        <tr>
+            <td><input type="number" id="start" placeholder="first"></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="end" placeholder="end"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="click" onclick="fun()"></td>
+        </tr>
+    </table>
+
+    <h1 id="fun"></h1>
+    
+    <script>
+
+        function fun()
+        {
+            var start = parseInt(document.getElementById('start').value);
+            var end = parseInt(document.getElementById('end').value);
+
+            var record = " ";
+
+            while(start <= end)
+            {
+                record = record + start ;
+                start = start + 1;
+                document.getElementById("fun").innerHTML = record + "                                 ";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

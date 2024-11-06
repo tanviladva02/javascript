@@ -1,0 +1,45 @@
+<table border="1">
+    <tr>
+        <td>Enter Your net value:</td>
+        <td><input type="text" id="n"></td>
+    </tr>
+    <tr>
+        <td>Enter Your Year:</td>
+        <td><input type="text" id="p"></td>
+    </tr>
+    <tr>
+        <td>Enter Your Rate:</td>
+        <td><input type="text" id="r"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="click" onclick="total()"></td>
+        <td><p id="total"></p></td>
+    </tr>
+</table>
+
+<script>
+
+function total()
+{
+    var n = parseInt(document.getElementById('n').value);
+    var p = parseInt(document.getElementById('p').value);
+    var r = parseInt(document.getElementById('r').value);
+
+    var i = (n*p*r)/100;
+
+    var total_amount= n + i;
+
+    document.getElementById('total').innerHTML = "Your total amount with intrust is : "+total_amount;
+}
+
+// var n = parseInt(prompt("Enter your net value :"));
+// var p = parseInt(prompt("Enter your year :"));
+// var r = parseInt(prompt("Enter your rate :"));
+
+// var i = (n*p*r)/100;
+
+// var total_amount = n + i;
+
+// console.log("Your total amount with intrust is : "+total_amount);
+
+</script>

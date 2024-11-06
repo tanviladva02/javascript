@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table>
+        <form>
+            <input type="hidden" id="no">
+            <tr>
+                <td><input type="text" onkeyup="searchProduct()" id="search"></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" id="email"></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" id="age"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="addData()" value="addData" id="add"></td>
+            </tr>
+        </form>
+    </table>
+
+    <div id="res"></div>
+
+    <script>
+
+        var product = [];
+
+        function addData() {
+
+            if (product == null) {
+                product = [];
+            }
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var age = document.getElementById('age').value;
+            var no = document.getElementById('no').value;
+
+           if(no){
+                for(var i = 0; i < product.length;i++){
+                    if(product[i]['no'] == no){
+                        product[i]['name'] = name;
+                        product[i]['email'] = email;
+                        product[i]['age'] = age;
+                        document.getElementById('add').value = 'insert';
+                    }
+                }
+           }
+           else{
+                var pro = {
+                    name: name,
+                    email: email,
+                    age: age,
+                    no: Math.round(Math.random() * 1000)
+                }
+
+                product.push(pro);
+           }
+
+           var aData = JSON.stringify(product);
+           localStorage.setItem('product', aData);
+           viewData();
+
+            var name = document.getElementById('name').value = "";
+            var email = document.getElementById('email').value = "";
+            var age = document.getElementById('age').value = "";
+
+        }
+
+        function viewData(){
+            var viewData = localStorage.getItem('product');
+            var view = JSON.parse(viewData);
+
+            var data = "<table><tr><th>Name:</th><th>Email:</th><th>Age:</th><th>Delete</th><th>Update</th></tr>";
+            for(var i = 0;i < view.length; i++){
+                data += `<tr>`;
+                data += `<td>${view[i]['name']}</td>`;
+                data += `<td>${view[i]['email']}</td>`;
+                data += `<td>${view[i]['age']}</td>`;
+                data += `<td><a href='javascript:deleteData(${view[i]['no']})'>Delete</a></td>`;
+                data += `<td><a href='javascript:updateData(${view[i]['no']})'>Update</a></td>`;
+                data += `</tr>`;
+            }
+            data += "</table>";
+            document.getElementById('res').innerHTML = data;     
+        }
+        viewData();
+
+       function deleteData(no){
+         var delData = localStorage.getItem('product');
+         var deData = JSON.parse(delData);
+
+         for(var i = 0;i<deData.length;i++){
+            if(deData[i]['no'] == no){
+                deData.splice(i,1);
+            }
+         }
+
+         localStorage.setItem('product', JSON.stringify(deData));
+         viewData();
+       }
+
+       function updateData(no){
+             
+            var upData = localStorage.getItem('product');
+            var uData = JSON.parse(upData);
+
+            for(var i = 0;i<uData.length;i++){
+                if(uData[i]['no'] == no){
+                    document.getElementById('name').value = uData[i]['name'];
+                    document.getElementById('email').value = uData[i]['email'];
+                    document.getElementById('age').value = uData[i]['age'];
+                    document.getElementById('no').value = no;
+                    document.getElementById('add').value = "Update";
+                }
+            }
+
+       }
+
+       function searchProduct(){
+        var search = document.getElementById('search').value;
+
+        var prod = localStorage.getItem('product');
+        var record = JSON.parse(prod);
+
+        var data = "<table><tr><th>Name:</th><th>Email:</th><th>Age:</th><th>Delete</th><th>Update</th></tr>";
+           
+        record.forEach((p_name , i)=> {
+            if(p_name.name.match(search)){
+                data += `<tr>`;
+                data += `<td>${record[i]['name']}</td>`;
+                data += `<td>${record[i]['email']}</td>`;
+                data += `<td>${record[i]['age']}</td>`;
+                data += `<td><a href='javascript:deleteData(${record[i]['no']})'>Delete</a></td>`;
+                data += `<td><a href='javascript:updateData(${record[i]['no']})'>Update</a></td>`;
+                data += `</tr>`;
+                data += '</table>';
+                document.getElementById('res').innerHTML = data;
+            }
+        });    
+
+       }
+
+    </script>
+
+</body>
+
+</html>

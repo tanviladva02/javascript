@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+	        background:linear-gradient(45deg,black,red,black);
+        }
+        table{
+            text-align: center;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+	        background:linear-gradient(45deg,skyblue,pink,yellow,green);
+        }
+        table td{
+            padding:20px;
+        }
+        table input{
+            padding:10px;
+        } 
+    </style>
+</head>
+<body>
+    
+    <div class="form">
+        <table border="1">
+            <tr>
+                <td>Enter the value of a:</td>
+                <td><input type="number" placeholder="Enter a value" id="a"></td>
+            </tr>
+            <tr>
+                <td>Enter the value of b:</td>
+                <td><input type="number" placeholder="Enter b value" id="b"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="click" onclick="getres()"></td>
+                <td><p id="ans"></p></td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    <script>
+    
+    function getres()
+    {
+        var a = parseInt(document.getElementById("a").value);
+        var b = parseInt(document.getElementById("b").value);
+        var c = a+b;
+    
+        document.getElementById('ans').innerHTML ="Ans is "+ c;
+    }
+    
+    </script>  
+</body>
+</html>
+
+
+  

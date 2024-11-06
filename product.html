@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var Product = [
+            {
+                Pro_name : "Phone",
+                price : 20000,
+                stock : 10
+            },
+            {
+                Pro_name : "Laptop",
+                price : 60000,
+                stock : 0
+            },
+            {
+                Pro_name : "Tablate",
+                price : 50000,
+                stock : 1
+            },
+            {
+                Pro_name : "A.C.",
+                price : 80000,
+                stock : 0
+            }
+        ]
+
+        for(var i = 0; i < Product.length; i++)
+        {
+            console.log("Product_name = "+Product[i].Pro_name);
+            console.log("Price = "+Product[i].price);
+            console.log("stock = "+Product[i].stock);
+
+            if(Product[i].price <= 500)
+            {
+                console.log("Product is affortable");
+            }
+            else
+            {
+                console.log("Product is Expensive");
+            }
+
+            if(Product[i].stock <= 0)
+            {
+                console.log("out of the stock");
+            }
+            else
+            {
+                console.log("in the stock");
+            }
+
+            console.log("----------------------");
+        }
+
+    </script>
+    
+</body>
+</html>

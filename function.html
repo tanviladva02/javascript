@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+    function add()
+    {
+        var a = parseInt(prompt("Enter the value of a"));
+        var b = parseInt(prompt("Enter the value of b"));
+        var ans = a + b;
+        console.log("Addition is = "+ans);
+    }
+
+    function sub()
+    {
+        var a = parseInt(prompt("Enter the value of a"));
+        var b = parseInt(prompt("Enter the value of b"));
+        var ans = a - b;
+        console.log("Substriction is = "+ans);
+    }
+
+    function multi()
+    {
+        var a = parseInt(prompt("Enter the value of a"));
+        var b = parseInt(prompt("Enter the value of b"));
+        var ans = a * b;
+        console.log("Multiplication is = "+ans);
+    }
+
+    function div()
+    {
+        var a = parseInt(prompt("Enter the value of a"));
+        var b = parseInt(prompt("Enter the value of b"));
+        var ans = a / b;
+        console.log("Division is = "+ans);
+    }
+
+    function mod()
+    {
+        var a = parseInt(prompt("Enter the value of a"));
+        var b = parseInt(prompt("Enter the value of b"));
+        var ans = a % b;
+        console.log("Modular is = "+ans);
+    }
+
+    var choice = parseInt(prompt("Enter 1 for + , Enter 2 for - , Enter 3 for * , Enter 4 for / ,Enter 5 for % "));
+    switch(choice)
+    {
+        case 1 :add();
+            break;
+        case 2 :sub();
+            break;
+        case 3 :multi();
+            break;
+        case 4 :div();
+            break;
+        case 5 :mod();
+            break;
+        default:
+            console.log("Invalid Choice...");
+            break;    
+    }
+
+</script>
+
+</body>
+</html>

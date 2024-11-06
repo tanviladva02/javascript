@@ -1,0 +1,34 @@
+<script>
+
+var choice = parseInt(prompt("Enter 1 for circle Enter 2 for traingle Enter 3 for rectangle Enter 4 for square"));
+
+switch(choice)
+{
+    case 1:
+        var r = parseInt(prompt("Enter the value of r"));
+        var circle = (3.14 * r * r);
+        console.log("Area of circle is : "+circle); 
+        break;
+    case 2:
+        var l = parseInt(prompt("Enter the value of l"));
+        var h = parseInt(prompt("Enter the value of h"));
+        var traingle = (0.5 * l * h);
+        console.log("Area of traingle is : "+traingle); 
+        break;
+    case 3:
+        var l = parseInt(prompt("Enter the value of l"));
+        var b = parseInt(prompt("Enter the value of b"));
+        var rectangle = (l * b);
+        console.log("Area of rectangle is : "+rectangle); 
+        break;
+    case 4:
+        var l = parseInt(prompt("Enter the value of l"));
+        var square = (l * l);
+        console.log("Area of square is : "+square); 
+        break;    
+    default:
+        console.log("Invalid choice ...");
+        break;
+}
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class student{
+
+            constructor(n,a,no){
+                this.name = n;
+                this.age = a;
+                this.no = no;
+            }
+
+            get(){
+                console.log("Student name = "+this.name);
+                console.log("Student age = "+this.age);
+                console.log("Student no = "+this.no);
+            }
+
+        }
+
+        var abc = new student("urvisha","17","5615");
+        abc.get();
+        var abc = new student("nency","18","7088");
+        abc.get();
+
+    </script>
+    
+</body>
+</html>

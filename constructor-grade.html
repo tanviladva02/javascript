@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class student{
+
+            constructor(n,a,no,s1,s2,s3){
+                this.name = prompt("Enter your name");
+                this.age = prompt("Enter your age");
+                this.no = prompt("Enter your number");
+                this.s1 = parseInt(prompt("Enter your s1 marks"));
+                this.s2 = parseInt(prompt("Enter your s2 marks"));
+                this.s3 = parseInt(prompt("Enter your s3 marks"));
+
+                this.total =this.s1+this.s2+this.s3;
+                this.avg = this.total/3;
+
+            }
+
+            get(){
+                console.log("Student name = "+this.name);
+                console.log("Student age = "+this.age);
+                console.log("Student no = "+this.no);
+                console.log("Math's marks = "+this.s1);
+                console.log("Science marks = "+this.s2);
+                console.log("English marks = "+this.s3);
+                console.log("Total = "+this.total);
+                console.log("Avg = "+this.avg+"%");
+                
+                if(this.avg >= 33)
+                {
+                    console.log("pass");
+                }
+                else
+                {
+                    console.log("fail");
+                }
+                
+                console.log("--------------------");
+
+            }
+
+        }
+
+        var abc = new student();
+        abc.get();
+
+    </script>
+    
+</body>
+</html>

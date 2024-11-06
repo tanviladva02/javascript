@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="validation">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name" name="name"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" id="mail" name="mail"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" id="pass" name="pass"></td>
+            </tr>
+            <tr>
+                <td>Number:</td>
+                <td><input type="number" id="num" name="num"></td>
+            </tr>
+            <tr>
+                <td>Hobby:</td>
+                <td>
+                    <input type="checkbox" name="hobby">dancing
+                    <input type="checkbox" name="hobby">singing
+                    <input type="checkbox" name="hobby">cooking
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+
+        $("#validation").validate({
+            rules:{
+                name:{
+                    required:true,
+                    minlength:2
+                },
+                mail:{
+                    required:true,
+                    email:true
+                },
+                pass:{
+                    required:true
+                },
+                num:{
+                    required:true,
+                    minlength:10,
+                    maxlength:10
+                },
+                hobby:{
+                    required:true,
+                    
+                }
+            },
+            messages:{
+                name:{
+                    required:"<span style='color:red;'>Name is required ... !</span>",
+                    minlength:"<span style='color:red;'>Minimum 5 characters are required ... !</span>"
+                },
+                mail:{
+                    required:"<span style='color:red;'>Email is required ... !</span>",
+                    email:"<span style='color:red;'>Enter valid Email ... !</span>",
+                },
+                pass:{
+                    required:"<span style='color:red;'>Password is required ... !</span>",
+                },
+                num:{
+                    required:"<span style='color:red;'>Number is required ... !</span>",
+                    minlength:"<span style='color:red;'>Minimum 10 digits are required ... !</span>",
+                    maxlength:"<span style='color:red;'>Maximum 10 digits are required ... !</span>",
+                }
+            }
+        }) 
+        
+    </script>
+    
+</body>
+</html>

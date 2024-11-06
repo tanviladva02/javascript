@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fonts/font/remixicon.css" type="text/css">
+    <link rel="stylesheet" href="fonts/jost/stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="css/js-validation.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="inner">
+            <form onsubmit="return validation()">
+                <label><span>Name :</span></label>
+                <input type="text" id="name" placeholder="Enter your name" class="col-12">
+                <div style="color:yellow;" id="errorname"></div>
+
+                <label><span>E-mail :</span></label>
+                <input type="text" id="mail" placeholder="Enter your email" class="col-12">
+                <div style="color:yellow;" id="errormail"></div>
+
+                <label><span>Password :</span></label>
+                <input type="password" id="pass" placeholder="Enter your password" class="col-12">
+                <div style="color:yellow;" id="errorpass"></div>
+
+                <label><span>Number :</span></label>
+                <input type="tel" id="num" placeholder="Enter your Number" class="col-12">
+                <div style="color:yellow;" id="errornum"></div>
+
+                <label><span>Hobby :</span></label>
+                <input type="checkbox" id="dance"><span class="theme-color">Dance</span>
+                <input type="checkbox" id="sing"><span class="theme-color">Sing</span>
+                <input type="checkbox" id="yoga"><span class="theme-color">Yoga</span>
+                <div style="color:yellow;" id="errorhobby"></div>
+
+                <label><span>Gender :</span></label>
+                <input type="radio" name="gender" id="male"><span class="theme-color">Male</span>
+                <input type="radio" name="gender" id="female"><span class="theme-color">Female</span>
+                <input type="radio" name="gender" id="other"><span class="theme-color">Other</span>
+                <div style="color:yellow;" id="errorgender"></div>
+
+                <!-- <label><span>Date :</span></label> -->
+                <input type="date" id="date" class="col-12">
+                <div style="color:yellow;" id="errordate"></div>
+
+                <!-- <label><span>City :</span></label> -->
+                <select id="city" class="col-12">
+                    <option></option>
+                    <option>Surat</option>
+                    <option>Rajkot</option>
+                    <option>Mumbai</option>
+                    <option>Delhi</option>
+                    <option>Goa</option>
+                </select>
+                <div style="color:yellow;" id="errorcity"></div>
+
+                <input type="submit" value="submit" class="button col-12">
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+        function validation() {
+
+            var name = document.getElementById('name').value;
+            var mail = document.getElementById('mail').value;
+            var pass = document.getElementById('pass').value;
+            var num = document.getElementById('num').value;
+            var dance = document.getElementById('dance').checked;
+            var sing = document.getElementById('sing').checked;
+            var yoga = document.getElementById('yoga').checked;
+            var male = document.getElementById('male').checked;
+            var female = document.getElementById('female').checked;
+            var other = document.getElementById('other').checked;
+            var date = document.getElementById('date').value;
+            var city = document.getElementById('city').value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var passformat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+
+
+            if (name == '') {
+                document.getElementById('errorname').innerHTML = " <i class='ri-error-warning-line'></i> Name is required ... !";
+                return false;
+            }
+            else if (name.length <= 2) {
+                document.getElementById('errorname').innerHTML = " <i class='ri-error-warning-line'></i> Minimum 2 character is required ... !";
+                return false;
+            }
+            else if (mail == '') {
+                document.getElementById('errorname').innerHTML = "";
+                document.getElementById('errormail').innerHTML = " <i class='ri-error-warning-line'></i> Email is required ... !";
+                return false;
+            }
+            else if (!mail.match(mailformat)) {
+                document.getElementById('errorname').innerHTML = "";
+                document.getElementById('errormail').innerHTML = " <i class='ri-error-warning-line'></i> Enter valid Email ... !";
+                return false;
+            }
+            else if (pass == '') {
+                document.getElementById('errormail').innerHTML = "";
+                document.getElementById('errorpass').innerHTML = " <i class='ri-error-warning-line'></i> Password is required ... !";
+                return false;
+            }
+            else if (!pass.match(passformat)) {
+                document.getElementById('errormail').innerHTML = "";
+                document.getElementById('errorpass').innerHTML = " <i class='ri-error-warning-line'></i>Enter 7 to 15 characters which contain at least one numeric digit and a special character";
+                return false;
+            }
+            else if (num == '') {
+                document.getElementById('errorpass').innerHTML = "";
+                document.getElementById('errornum').innerHTML = " <i class='ri-error-warning-line'></i> Number is required ... !";
+                return false;
+            }
+            else if (num.length > 11) {
+                document.getElementById('errorpass').innerHTML = "";
+                document.getElementById('errornum').innerHTML = " <i class='ri-error-warning-line'></i> maximum 10 character is required ... !";
+                return false;
+            }
+            else if (num.length < 10) {
+                document.getElementById('errorpass').innerHTML = "";
+                document.getElementById('errornum').innerHTML = " <i class='ri-error-warning-line'></i> minimum 10 character is required ... !";
+                return false;
+            }
+            else if (dance == false && sing == false && yoga == false) {
+                document.getElementById('errornum').innerHTML = "";
+                document.getElementById('errorhobby').innerHTML = " <i class='ri-error-warning-line'></i> One Hobby is required ... !";
+                return false;
+            }
+            else if (male == false && female == false && other == false) {
+                document.getElementById('errorhobby').innerHTML = "";
+                document.getElementById('errorgender').innerHTML = " <i class='ri-error-warning-line'></i> Please select the gender ... !";
+                return false;
+            }
+            else if (date == '') {
+                document.getElementById('errorgender').innerHTML = "";
+                document.getElementById('errordate').innerHTML = " <i class='ri-error-warning-line'></i> Please select the Date Of Birth ... !";
+                return false;
+            }
+            else if (city == '') {
+                document.getElementById('errordate').innerHTML = "";
+                document.getElementById('errorcity').innerHTML = " <i class='ri-error-warning-line'></i> Please select Your City ... !";
+                return false;
+            }
+            else {
+                return true;
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>Enter the value of a </td>
+            <td><input type="number" id="a"></td>
+        </tr>
+        <tr>
+            <td>Enter the value of b </td>
+            <td><input type="number" id="b"></td>
+        </tr>
+        <tr>
+            <td>Enter the value of c </td>
+            <td><input type="number" id="c"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="click" onclick="res()"></td>
+            <td><p id="res"></p></td>
+        </tr>
+    </table>
+    
+    <script>
+
+        function res()
+        {
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var c = parseInt(document.getElementById('c').value);
+
+            if(a > b)
+            {
+                if(a > c)
+                {
+                    document.getElementById('res').innerHTML = "a is maximum...";
+                }
+                else{
+                    document.getElementById('res').innerHTML = "c is maximum...";
+                }
+            }
+            else
+            {
+                if(b > c)
+                {
+                    document.getElementById('res').innerHTML = "b is maximum...";
+                }
+                else{
+                    document.getElementById('res').innerHTML = "c is maximum...";
+                }
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

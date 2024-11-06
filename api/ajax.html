@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="button" value="click" onclick="GetImg()">
+    <div id="res"></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        function GetImg(){
+
+            $.ajax({
+                url : "https://dog.ceo/api/breeds/image/random",
+                type : "get",
+                success : function(data){
+                    console.log(data.message);
+                    var img = "<img src='"+data.message+"' width='500px'/>";
+                    document.getElementById("res").innerHTML = img;
+                }
+            })
+
+        }
+
+    </script>
+
+</body>
+</html>

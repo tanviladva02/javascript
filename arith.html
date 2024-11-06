@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <select id="choice">
+            <option value="A">Addition</option>
+            <option value="S">Substraction</option>
+            <option value="M">Multiplication</option>
+            <option value="D">Division</option>
+            <option value="m">Modular</option>
+        </select>
+        <input type="button" value="Click" onclick="print()">
+        <p id="ans"></p>
+    </form>
+
+    <script>
+        function print()
+        {
+            var choice = document.getElementById('choice').value;
+            var a=parseInt(prompt("Enter a value..."));
+            var b=parseInt(prompt("Enter b value..."));
+
+            if(choice == 'A')
+            {
+                ans=a+b;
+                document.getElementById('ans').innerHTML="Addition is : "+ans;
+            }
+            else if(choice == 'S')
+            {
+                ans = a-b;
+                document.getElementById('ans').innerHTML="Substraction : "+ans;
+            }
+            else if(choice == 'M')
+            {
+                ans=a*b;
+                document.getElementById('ans').innerHTML="Multiplication : "+ans;
+            }
+            else if(choice == 'D')
+            {
+                ans=a/b;
+                document.getElementById('ans').innerHTML="Division : "+ans;
+            }
+            else if(choice == 'm')
+            {
+                ans=a%b;
+                document.getElementById('ans').innerHTML="Modular : "+ans;
+            }
+            else{
+                document.getElementById('ans').innerHTML="Invalid choice";
+            }
+        }
+    </script>
+</body>
+</html>

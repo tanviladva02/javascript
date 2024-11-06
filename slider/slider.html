@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        img{
+            display: block;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="slider" id="caption">
+        <div class="container">
+            <div class="slider-slide">
+                <img src="" alt="" title="" width="100%" height="700px" id="img">
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+
+// var caption = [
+//             {
+//                 img : "img/slider-1.jpeg"
+//             },
+//             {
+//                 img : "img/slider-2.jpg"
+//             },
+//             {
+//                 img : "img/slider-3.jpeg"
+//             },
+//             {
+//                 img : "img/slider-4.jpg"
+//             },
+//             {
+//                 img : "img/slider-5.jpeg"
+//             }
+//         ]
+
+//         var im = document.getElementById('img').src = caption[0].img; 
+        
+//         var i = 0;
+
+//         var colorchange = setInterval(function(){
+//             if(i==caption.length){
+//                 i=0;
+//             }
+//             // var im = document.getElementById('img').src = caption[0].img;   
+//             im.style.image = caption[i];
+//             // box.innerHTML = color[i] + "=" + i;
+//             i++;
+//         },500);
+
+var caption = [
+    {
+        img: "img/slider-1.jpeg"
+    },
+    {
+        img: "img/slider-2.jpg"
+    },
+    {
+        img: "img/slider-3.jpeg"
+    },
+    {
+        img: "img/slider-4.jpg"
+    },
+    {
+        img: "img/slider-5.jpeg"
+    }
+];
+
+var i = 0;
+var imgElement = document.getElementById('img');
+imgElement.src = caption[i].img; 
+
+var colorchange = setInterval(function() {
+    i++;
+    if (i >= caption.length) {
+        i = 0;
+    }
+    imgElement.src = caption[i].img;
+}, 1000);
+
+
+
+    </script>
+    
+</body>
+</html>

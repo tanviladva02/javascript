@@ -1,0 +1,40 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="insert.html">Main</a>
+
+    <div id="res"></div>
+
+    <script>
+
+        function viewData(){
+
+        var viewdata = localStorage.getItem('student');
+        var view = JSON.parse(viewdata);
+
+        var data = "<table border='1'><tr><th>Name</th><th>Email</th><th>Age</th><th>Delete</th><th>Edit</th></tr>";
+
+        for(var i = 0; i<view.length;i++){
+
+            data += `<tr>`;
+            data += `<th>${view[i]['name']}</th>`;
+            data += `<th>${view[i]['email']}</th>`;
+            data += `<th>${view[i]['age']}</th>`;
+            data += `</tr>`;
+        }
+
+        data +=`</table>`;
+        document.getElementById('res').innerHTML = data;
+        }
+        viewData();
+
+    </script>
+    
+</body>
+</html> -->

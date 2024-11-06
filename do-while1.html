@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <table border="">
+        <tr>
+            <td>Enter the starting point of loop</td>
+            <td><input type="number" id="start"></td>
+        </tr>
+        <tr>
+            <td>Enter the ending point of loop</td>
+            <td><input type="number" id="end"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="click" onclick="ans()"></td>
+            <td><p id="ans"></p></td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        function ans()
+        {
+            var start = parseInt(document.getElementById('start').value);
+            var end = parseInt(document.getElementById('end').value);
+            var i = start;
+            
+            do
+            {
+                document.write(i+"<br/>");
+                i++;
+            }while(i <= end);
+
+
+        }
+
+    </script>
+
+</body>
+</html>

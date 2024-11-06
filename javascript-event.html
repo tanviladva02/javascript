@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width:100px;
+            height: 100px;
+            background-color: red;
+            border:2px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <button id="btn">Hover</button>
+    <p id="ans"></p> -->
+    <div id="box"></div>
+    <div id="box"></div>
+    <div id="box"></div>
+    <div id="box"></div>
+    <div id="box"></div>
+
+    <button id="btn">click</button>
+
+    <script>
+
+        // var btn = document.querySelector("#btn");
+        // btn.addEventListener("mouseover",myover);
+        // btn.addEventListener("mouseleave",myleave);
+        // btn.addEventListener("click",myclick);
+        // function myover(){
+        //     document.getElementById('ans').innerHTML = "Mouseover";
+        // }
+        // function myleave(){
+        //     document.getElementById('ans').innerHTML = "Mouseleave";
+        // }
+        // function myclick(){
+        //     document.getElementById('ans').innerHTML = "Mouseclick";
+        // }
+
+        var box = document.querySelectorAll("#box");
+
+        for(var i = 0 ; i < box.length ; i++)
+        {
+            box[i].addEventListener("mouseover",function(){
+                this.style.backgroundColor = "green";
+                this.style.width = "200px";
+                this.style.transition = "0.4s"
+            })
+            box[i].addEventListener("mouseleave",function(){
+                this.style.backgroundColor = "";
+                this.style.width = "";
+            })
+        }
+
+        
+        var btn = document.querySelector("#btn");
+        btn.addEventListener("click",function(){
+            window.location="arith.html";
+        });
+
+
+    </script>
+    
+</body>
+</html>

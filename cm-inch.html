@@ -1,0 +1,24 @@
+<table border="1">
+    <tr>
+        <td>Enter cm</td>
+        <td><input type="text" placeholder="Enter a value" id="a"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="click" onclick="getres()"></td>
+    </tr>
+</table>
+
+<h1 id="ans"></h1>
+
+<script>
+
+    function getres()
+    {
+        var cm =parseInt(document.getElementById("a").value);
+        var  Inch = cm*(0.393701);
+
+        document.getElementById('ans').innerHTML=Inch;
+    }
+
+
+</script>    

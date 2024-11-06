@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cart</title>
+<style>
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    .curd{
+       
+        background-image: url(https://img.freepik.com/free-photo/shopping-cart-filled-with-coins-copy-space-background_23-2148305919.jpg?size=626&ext=jpg&ga=GA1.1.2113030492.1719792000&semt=ais_user);
+        width:100%;
+        height:100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .AddData{
+        position: absolute;
+        top:25%;
+        left:25%;   
+    }
+    table input{
+        padding:15px;
+        width:100%;
+        border:1px solid black;
+    }
+    table td{
+        padding:15px;
+        font-size: 20px;
+    }
+    table a{
+      text-decoration: none;
+      background-color: black;
+      color:white;
+      padding:10px 30px;  
+    }
+    table #img{
+        border:none;
+    }
+    table .btn input{
+        background-color: black;
+      color:white;
+      font-size: 20px;
+      padding:10px 30px;  
+      cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div class="curd">
+        <div class="AddData">
+            <form id="formData">
+                <table border="">
+                    <tr>
+                        <input type="hidden" id="editno">
+                    </tr>
+                    <tr>
+                        <td> product name:</td>
+                        <td><input type="text" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td>price:</td>
+                        <td><input type="text" id="price"></td>
+                    </tr>
+                    <tr>
+                        <td>images:</td>
+                        <td><input type="file" id="img"></td>
+                    </tr>
+                    <tr>
+                        <td class="btn"><input type="submit" value="add data" id="xyz"></td>
+                        <td><a href="ViewData.html">view</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+  
+    <script>
+        var footWear = [
+        ];
+
+        document.getElementById("formData").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            add_data();
+        });
+
+        function add_data() {
+            var name = document.getElementById('name').value;
+            var price = document.getElementById('price').value;
+            var img = document.getElementById('img').files[0].name;
+
+            var pr = {
+                name: name,
+                price: price,
+                img: img,
+                no: Math.round(Math.random() * 1000),
+            };
+
+        
+            var existingData = localStorage.getItem("footWear");
+            var footWear = existingData ? JSON.parse(existingData) : []; 
+
+        
+            footWear.push(pr);
+
+        
+            localStorage.setItem("footWear", JSON.stringify(footWear));
+
+   
+            document.getElementById('name').value = "";
+            document.getElementById('price').value = "";
+            document.getElementById('img').value = ""; 
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>Enter the minute</td>
+            <td><input type="number" placeholder="Enter Minute" id="minute"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="click" onclick="secondConverter()"></td>
+            <td><h1 id="second"></h1></td>
+        </tr>
+    </table>
+
+
+
+    <script>
+        
+        function secondConverter(){
+            
+            var minute = parseInt(document.getElementById("minute").value);
+            var second = minute * 60;
+            document.getElementById('second').innerHTML = second;
+
+        }
+
+    </script>
+    
+</body>
+</html>

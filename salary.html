@@ -1,0 +1,63 @@
+<table border="1">
+    <tr>
+        <td>Enter Your Salary:</td>
+        <td><input type="text" id="salary"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" value="click" onclick="getres()"></td>
+    </tr>
+    <tr>
+        <td>Your DA :</td>
+        <td><p id="da"></p></td>
+    </tr>
+    <tr>
+        <td>Your HRA :</td>
+        <td><p id="hra"></p></td>
+    </tr>
+    <tr>
+        <td>Your Gross Salary is :</td>
+        <td><p id="gross"></p></td>
+    </tr>
+</table>    
+
+<script>
+
+
+    function getres()
+    {
+        var sa = parseInt(document.getElementById('salary').value);
+        var da = sa*5/100;
+        var hra = sa*10/100;
+
+        document.getElementById('da').innerHTML = da ;
+        document.getElementById('hra').innerHTML = hra ;
+
+        var total = sa + da + hra ;
+
+        var tax = sa*5/100;
+
+        var gross = total-tax;
+        document.getElementById('gross').innerHTML = gross;
+
+    }
+
+
+    // CONSOLE
+
+    // var sa = parseInt(prompt("Enter Your Salary: "+sa));
+
+    // var da = sa*5/100;
+    // var hra = sa*10/100;
+
+    // console.log("DA is = "+da+" HRA is = "+hra);
+
+    // var total = sa + da + hra ;
+    // console.log("Total is = "+total);
+
+    // var tax = sa*5/100;
+
+    // var gross = total-tax;
+    // console.log("Gross Salay is : "+gross);
+
+
+</script>    

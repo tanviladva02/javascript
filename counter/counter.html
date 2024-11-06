@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/counter.css" type="text/css">
+</head>
+<body>
+
+   <div class="timer-inner">
+        <div class="timer-main">
+            <h1 id="timer">00:00:00</h1><br>
+            <button onclick="starttimer()" class="btn-blue">Start</button>
+            <button onclick="clearInterval(time)" class="btn-yellow">Stop</button>
+            <button onclick="resettimer()" class="btn-green">Reset</button>
+        </div>
+   </div>
+
+
+    <script>
+
+        var timer = document.getElementById('timer');
+        var time;
+        function starttimer(){
+            var hours = 0;
+            var minutes = 0;
+            var seconds = 0;
+
+             time = setInterval(function(){
+                var abc = hours + ":" + minutes + ":" + seconds;
+                timer.innerHTML = abc;
+                seconds++;
+                
+                if(seconds == 60){
+                    minutes++;
+                    seconds = 0;
+                }
+                if(minutes == 60){
+                    hours++;
+                    minutes = 0;
+                }
+
+            },100);
+        }
+
+        function resettimer(){
+            timer.innerHTML = "00:00:00";
+        }
+
+    </script>
+    
+</body>
+</html>

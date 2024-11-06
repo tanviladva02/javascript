@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main  style="background-image: url(https://media.istockphoto.com/id/1211544068/vector/virus-bacteria-vector-background-cells-disease-outbreak-coronavirus-alert-pattern.jpg?s=612x612&w=0&k=20&c=Whe1hWxGtIB35HaGUdN0_4HBQ9-q8H6iGOAbTVfe3oc=);background-size: cover;width:100%;height:100vh">
+        <div style=" position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);">
+            <h1 style="text-align: center; padding:20px 0;">Corona-API</h1>
+            <form>
+                <select id="selectstate" style=" padding:10px;border:1px solid black;">
+                    <option value="">--Select State--</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                </select>
+                <input type="button" onclick="getdata()" value="Click" style=" padding:10px 25px;border: none;background-color: black;color:white;">
+            </form>
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        function getdata() {
+            var state = document.getElementById('selectstate').value;
+            $.ajax({
+                url: 'https://api.rootnet.in/covid19-in/stats/latest',
+                type: 'GET',
+                success: function (data) {
+                    console.log(data);
+                    const stateData = data.data.regional.find(region => region.loc === state);
+
+                    if (stateData) {
+                    var resultHtml = `
+                        <h2 style="font-size:20px;padding:10px 0;">${state} COVID-19 Data</h2>
+                        <p style="font-size:18px;">Confirmed cases: ${stateData.confirmedCasesIndian}</p>
+                        <p style="font-size:18px;padding:10px 0;">Recovered cases: ${stateData.discharged}</p>
+                        <p style="font-size:18px;">Deaths: ${stateData.deaths}</p>
+                    `;
+                        document.getElementById('result').innerHTML = resultHtml;
+                    } 
+                    else {
+                        document.getElementById('result').innerHTML = `No data found for ${state}`;
+                    }
+                }
+            })
+        }
+    </script>
+
+</body>
+
+</html>

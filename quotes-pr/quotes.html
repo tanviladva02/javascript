@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="css/quotes.css" type="text/css">
+</head>
+<body>
+
+
+   <div id="caption" class="main">
+        <div class="inner">
+            <h1>Self-love Quotes</h1>
+            <div id="bgcolor" class="bg">
+                <h2 id="quotes"></h2>
+                <h4 id="name"></h4>
+                <p id="date"></p>
+                <img src="" alt="" title="" width="70px" height="70px" id="img">
+                <input type="submit" value="change" onclick="getchange()">
+                <h5 id="count">1</h5>
+            </div>
+        </div>
+   </div>
+
+
+    <script>
+
+        var caption = [
+            {
+                quote : "Happiness is when what you think, what you say, and what you do are in harmony.",
+                name : "- Mahatma Gandhi",
+                date : "26-01-1943",
+                bgcolor : "#5AB2FF",
+                img : "img/img1.jpg"
+            },
+            {
+                quote : "The most powerful relationship you will ever have is the relationship with yourself.",
+                name : "- Steve Maraboli",
+                date : "22-01-2006",
+                bgcolor : "#D2649A",
+                img : "img/img2.jpg"
+            },
+            {
+                quote : "Self-love, my liege, is not so vile a sin, as self-neglecting.",
+                name : "- William Shakespeare",
+                date : "17-01-2017",
+                bgcolor : "#6DC5D1",
+                img : "img/img3.jpg"
+            },
+            {
+                quote : "Love yourself first, and everything else falls into line.",
+                name : "- Lucille Ball",
+                date : "02-01-2008",
+                bgcolor : "#7469B6",
+                img : "img/img4.png"
+            }
+        ]
+
+        var bg = document.getElementById('bgcolor');
+        bg.style.backgroundColor = caption[0].bgcolor;
+        var qu = document.getElementById('quotes').innerHTML = caption[0].quote;
+        var qu = document.getElementById('name').innerHTML = caption[0].name;
+        var qu = document.getElementById('date').innerHTML = caption[0].date;
+        var im = document.getElementById('img').src = caption[0].img;
+        
+        var i = 1;
+
+        function getchange()
+        {
+            if(i == caption.length)
+            {
+                i = 0;
+            }
+            bg.style.backgroundColor = caption[i].bgcolor;
+            var qu = document.getElementById('quotes').innerHTML = caption[i].quote;
+            var qu = document.getElementById('name').innerHTML = caption[i].name;
+            var qu = document.getElementById('date').innerHTML = caption[i].date;
+            var im = document.getElementById('img').src = caption[i].img;
+            document.getElementById('count').innerHTML =i+1;
+            i++;
+        }
+
+
+    </script>
+
+    
+</body>
+</html>

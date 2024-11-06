@@ -1,0 +1,38 @@
+<!-- <table border="1">
+    <tr>
+        <td>Enter Your units :</td>
+        <td><input type="text" id="unit"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="click" onclick="total()"></td>
+        <td><p id="total"></p></td>
+    </tr>
+</table> -->
+
+
+<script>
+
+    // function total()
+    // {
+    //     var unit = parseInt(document.getElementById('unit').value);
+    //     var charge = unit * 8;
+
+    //     var gst = charge * 0.1;
+    //     var tax = charge * 0.05;
+
+    //     var total_pay = charge + gst + tax ;
+
+    //     document.getElementById('total').innerHTML = "total payable bill is : "+total_pay;
+    // }
+
+    var unit = parseInt(prompt("Enter Your Unit : "));
+    var charge = unit * 8;
+
+    var gst = charge * 0.1;
+    var tax = charge * 0.05;
+
+    var total_pay = charge + gst + tax ;
+
+    console.log("Your total payment is = "+total_pay);
+
+</script>

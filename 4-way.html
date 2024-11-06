@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //1) WITH ARGUMENT , WITH RETURNTYPE
+
+        function add(a,b)
+        {
+            var ans = a + b;
+            return ans;
+        }
+
+        console.log("addition is = "+add(10,20));
+
+        // 2) WITH ARGUMENT , WITHOUT RETURNTYPE
+
+        function sub(a,b)
+        {
+            var ans = a - b;
+            console.log("substriction is = "+ans);
+        }
+
+        sub(20,10);
+
+        // 3) WITHOUT ARGUMENT , WITH RETURNTYPE
+
+        function multi()
+        {
+            var a = 10,b = 20;
+            var ans = a * b;
+            return ans;
+        }
+
+        console.log("multiplication is = "+multi());
+
+        // 4) WITHOUT ARGUMENT , WITHOUT RETURNTYPE
+
+        function div()
+        {
+            var a = 100, b = 10;
+            var ans = a/b;
+            console.log("Division is = "+ans);
+        }
+
+        div();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <td>Enter Any Number...</td>
+            <td><input type="number" id="num"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="click" onclick="res()"></td>
+            <td><p id="res"></p></td>
+        </tr>
+    </table>
+
+    <script>
+
+        function res()
+        {
+            var num = document.getElementById('num').value;
+
+            if(num % 2 == 0)
+            {
+                document.getElementById('res').innerHTML = "NUM IS EVEN ...";
+            }
+            else{
+                document.getElementById('res').innerHTML = "NUM IS ODD ...";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

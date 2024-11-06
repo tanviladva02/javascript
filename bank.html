@@ -1,0 +1,26 @@
+<script>
+
+var choice = parseInt(prompt("Enter 1 for Withdraw Enter 2 for Deposite Enter 3 for Balnce"));
+
+var balance = parseInt(prompt("Enter Your Bank Balance :"));
+
+switch(choice)
+{
+    case 1:
+        var w = parseInt(prompt("Enter your withdraw amount :"));
+        var w = balance - w;
+        console.log("Withdraw amount is "+w);
+        break;
+    case 2:
+        var d = parseInt(prompt("Enter your Deposite amount :"));
+        var d = balance + d;
+        console.log("Withdraw amount is "+d);
+        break;
+    case 3:
+        console.log("Your Bank Balance is : "+balance);
+        break;
+    default:
+        break;
+}
+
+</script>

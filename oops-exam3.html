@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class shape{
+
+            circle(r){
+                this.r = r;
+                console.log("Area of circle is = "+3.14*r*r);
+            }
+
+            rectangle(w,h){
+                this.w = w;
+                this.h = h;
+                console.log("Area of rectangle is = "+ w*h);
+            }
+
+        }
+
+        var abc = new shape;
+        abc.circle(10);
+        abc.rectangle(10,10);
+
+    </script>
+    
+</body>
+</html>

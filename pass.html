@@ -1,0 +1,47 @@
+<table border="1">
+    <tr>
+        <td>Enter Your Current Password : </td>
+        <td><input type="password" id="current"></td>
+    </tr>
+    <tr>
+        <td>Enter Your New Password : </td>
+        <td><input type="password" id="new"></td>
+    </tr>
+    <tr>
+        <td>Enter Your conform Password : </td>
+        <td><input type="password" id="conform"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="click" onclick="pas()"></td>
+        <td><p id="pas"></p></td>
+    </tr>
+</table>
+
+
+<script>
+
+    function pas()
+    {
+        var current = document.getElementById('current').value;
+        var newpas = document.getElementById('new').value;
+        var  conform = document.getElementById('conform').value;
+
+        if(current != newpas)
+        {
+            if(newpas == conform)
+            {
+                document.getElementById('pas').innerHTML = "Password Change Succesfully...";
+            }
+            else
+            {
+                document.getElementById('pas').innerHTML = "Enter same password...";
+            }
+        }
+        else
+        {
+            document.getElementById('pas').innerHTML = "Enter diffrent password...";
+        }
+    }
+    
+
+</script>

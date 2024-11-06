@@ -1,0 +1,34 @@
+<script>
+
+var choice = parseInt(prompt("Enter 1 for Addition Enter 2 for Substriction Enter 3 for Multiplication Enter 4 for Division Enter 5 for Modular"));
+var a = parseInt(prompt("Enter the value of a "));
+var b = parseInt(prompt("Enter the value of b "));
+
+switch(choice)
+{
+    case 1:
+        var c = a + b;
+        console.log("Addition is "+c);
+        break;
+    case 2:
+        var c = a - b;
+        console.log("Substriction is "+c);
+        break;
+    case 3:
+        var c = a * b;
+        console.log("Multiplication is "+c);
+        break;
+    case 4:
+        var c = a / b;
+        console.log("Division is "+c);
+        break;
+    case 5:
+        var c = a % b;
+        console.log("Modular is "+c);
+        break;       
+    default:
+        console.log("Invalid choice ...");
+        break;
+}
+
+</script>

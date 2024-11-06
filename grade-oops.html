@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class student{
+
+            constructor(s_name,s_no)
+            {
+                this.s_name= s_name;
+                this.s_no= s_no;
+            }
+            get()
+            {
+                console.log(`Student name = ${this.s_name}`);
+                console.log(`Student Number = ${this.s_no}`);
+            }
+            marks(s1,s2,s3){
+                this.s1 = s1;
+                this.s2 = s2;
+                this.s3 = s3;
+            }
+            getmarks()
+            {
+                console.log(`Maths marks = ${this.s1}`);
+                console.log(`Science marks = ${this.s2}`);
+                console.log(`Maths marks = ${this.s3}`);
+            }
+            avg(){
+                this.total = this.s1 + this.s2 + this.s3;
+                this.avge = this.total/3;
+                console.log(`avg marks = ${this.avge}`);
+            }
+            grade(){
+                if(this.avge > 33){
+                    console.log(`you are pass...`);
+                }
+                else{
+                    console.log(`you are fail...`);
+                }
+            }
+        }
+
+        var abc = new student("Urvisha", 10);
+        abc.get();
+        abc.marks(60,70,80);
+        abc.getmarks();
+        abc.getavg();
+        abc.avg();
+        abc.grade();
+    
+
+    </script>
+    
+</body>
+</html>

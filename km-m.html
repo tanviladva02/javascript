@@ -1,0 +1,24 @@
+<table border="1">
+    <tr>
+        <td>m Value</td>
+        <td><input type="text" placeholder="Enter a value" id="a"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="click" onclick="getres()"></td>
+    </tr>
+</table>
+
+<h1 id="ans"></h1>
+
+<script>
+
+    function getres()
+    {
+        var m =parseInt(document.getElementById("a").value);
+        var km = m/1000;
+
+        document.getElementById('ans').innerHTML=km + "km";
+    }
+
+
+</script>    

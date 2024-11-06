@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>Enter Your Current Password</td>
+            <td><input type="password" placeholder="Current Password" id="current"></td>
+        </tr>
+        <tr>
+            <td>Enter Your New Password</td>
+            <td><input type="password" placeholder="New Password" id="new"></td>
+        </tr>
+        <tr>
+            <td>Enter Your Conform Password</td>
+            <td><input type="password" placeholder="Conform Password" id="conform"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="submit" onclick="pass()"></td>
+            <td><h1 id="res"></h1></td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        function pass(){
+
+            var currentpass = document.getElementById("current").value;
+            var newpass = document.getElementById("new").value;
+            var conformpass = document.getElementById("conform").value;
+
+            if(currentpass != newpass){
+                if(newpass == conformpass){
+                    document.getElementById('res').innerHTML = "Login Succesfully...";
+                }
+                else{
+                    document.getElementById('res').innerHTML = "new password & conform password are not same...";
+                }
+            }
+            else{
+                document.getElementById('res').innerHTML = "new password & current password can not be same...";
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>

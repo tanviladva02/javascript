@@ -1,0 +1,79 @@
+<table border="1">
+    <tr>
+        <td>s1 Marks:</td>
+        <td><input type="text" id="s1"></td>
+    </tr>
+    <tr>
+        <td>s2 Marks:</td>
+        <td><input type="text" id="s2"></td>
+    </tr>
+    <tr>
+        <td>s3 Marks:</td>
+        <td><input type="text" id="s3"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="click" onclick="getres()"></td>
+    </tr>
+    <tr>
+        <td><p id="total"></p></td>
+        <td><p id="avg"></p></td>
+    </tr>
+    <tr>
+        <td>Grade : </td>
+        <td id="grade"></td>
+    </tr>
+</table>    
+
+<script>
+
+
+    function getres()
+    {
+        var s1 = parseInt(document.getElementById('s1').value);
+        var s2 = parseInt(document.getElementById('s2').value);
+        var s3 = parseInt(document.getElementById('s3').value);
+
+        var total = s1+s2+s3;
+        document.getElementById('total').innerHTML = "Total of subjects marks is "+total;
+
+        var avg = total / 3;
+        document.getElementById('avg').innerHTML = "Avg is "+avg+" %";
+
+        if(avg >=35 && avg<50)
+        {
+            document.getElementById("grade").innerHTML="C Grade";
+        }
+        else if(avg >=50 &&  avg<75)
+        {
+            document.getElementById("grade").innerHTML="B Grade";
+        }
+        else if(avg >=75 && avg<90)
+        {
+            document.getElementById("grade").innerHTML="A Grade";
+        }
+        else if(avg>=90)
+        {
+            document.getElementById("grade").innerHTML="A+ Grade";
+        }
+        else{
+            document.getElementById("grade").innerHTML="Fail";
+        }
+
+    }
+
+
+    // CONSOLE
+
+    // var s1 = parseInt(prompt("Enter s1 Marks:"+s1));
+    // var s2 = parseInt(prompt("Enter s2 Marks:"+s2));
+    // var s3 = parseInt(prompt("Enter s3 Marks:"+s3));
+
+    // var total = s1+s2+s3;
+
+    // console.log("Total of subjects marks is : "+total);
+
+    // var avg = total / 3;
+    // console.log("Avg of result is :"+avg);
+
+</script>    

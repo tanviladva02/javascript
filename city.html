@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form>
+        <select id="choice">
+            <option value="S">Surat</option>
+            <option value="M">Mumbai</option>
+            <option value="G">Goa</option>
+            <option value="D">Delhi</option>
+            <option value="R">Rajkot</option>
+        </select>
+        <input type="button" value="click" onclick="res()">
+        <p id="result"></p>
+    </form>
+
+
+    <script>
+
+        function res()
+        {
+            var choice = document.getElementById('choice').value;
+            if(choice == 'S')
+            {
+                document.getElementById('result').innerHTML = "Surat is my city ... ";
+            }
+            else if (choice == 'M')
+            {
+                document.getElementById('result').innerHTML = "Mumbai is my city ...";
+            }
+            else if(choice == 'G')
+            {
+                document.getElementById('result').innerHTML = "Goa is my city ...";
+            }
+            else if(choice == 'D')
+            {
+                document.getElementById('result').innerHTML = "Delhi is my city ...";
+            }
+            else if(choice == 'R')
+            {
+                document.getElementById('result').innerHTML = "Rajkot is my city ...";
+            }
+            else
+            {
+                document.getElementById('result').innerHTML = "Invalid choice ...";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

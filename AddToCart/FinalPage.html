@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Cart</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div style="background-image: url(https://plus.unsplash.com/premium_photo-1681469490172-cec02f258f43?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);width:100%;height:100vh;">
+        <div id="res"></div>
+
+
+        <h2 style="text-align: center;padding:30px 0;">Shopping Cart</h2>
+        <table id="cartTable" style="width:100%;" border="">
+            <tr style="height:50px;">
+                <th>Name</th>
+                <th>Price</th>
+                <th>image</th>
+                <th>Action</th>
+            </tr>
+        </table>
+        <div id="FinalPrice" style="padding:20px 0;font-size: 18px;font-weight: 500;text-align: center;"></div>
+    </div>
+
+    <script>
+
+        function displayProducts() {
+            var viewdata = localStorage.getItem('footWear');
+            var view = JSON.parse(viewdata);
+            var data = "<div><div><table border='1' style='width:100%;text-align:center;'><tr style='height:50px'><th>Name</th><th>Price</th><th>Action</th><th>Delete</th><th>AddToCart</th></tr>";
+
+            for (var i = 0; i < view.length; i++) {
+                data += "<tr>";
+                data += "<td>" + view[i].name + "</td>";
+                data += "<td>₹" + view[i].price + "</td>";
+                data += "<td><img src='images/" + view[i].img + "' style='width:100px;height:100px;object-fit:cover;'/></td>";
+                data += `<td><a href="javascript:deletedata(${view[i]['no']})" style='color:red;font-size:18px;font-weight:500;text-decoration:none;'>delete</a></td>`;
+                data += `<td><button onclick='addToCart("${view[i].name}", ${view[i].price}, "${view[i].img}")' style='padding:10px 20px;background-color:green;color:white;border:none;'>Add to Cart</button></td>`;
+                data += "</tr>";
+            }
+
+            data += "</table></div></div>";
+            document.getElementById('res').innerHTML = data;
+        }
+
+        function addToCart(name, price, img) {
+            var cartTable = document.getElementById("cartTable");
+            var data = "<tr style='text-align:center;'>";
+            data += "<td>" + name + "</td>";
+            data += "<td>₹" + price + "</td>";
+            data += "<td><img src='images/" + img + "' width='100px' height='100px'/></td>";
+            data += "<td><button onclick='removeFromCart(this)' style='color:red;background-color:transparent;font-size:18px;font-weight:500;border:none;'>Remove</button></td>";
+            data += "</tr>";
+            cartTable.innerHTML += data;
+            updateFinalPrice();
+        }
+        
+        function removeFromCart(button) {
+            var data = button.parentNode.parentNode;
+            data.parentNode.removeChild(data);
+            updateFinalPrice();
+        }
+
+        function updateFinalPrice() {
+            var cartTable = document.getElementById("cartTable");
+            var FinalPrice = 0;
+            for (var i = 1; i < cartTable.rows.length; i++) {
+                FinalPrice += parseInt(cartTable.rows[i].cells[1].innerText.replace("₹", ""));
+            }
+            document.getElementById("FinalPrice").innerText = "Total Price: ₹" + FinalPrice;
+        }
+
+        displayProducts();
+        function deletedata(no) {
+            var deldata = localStorage.getItem('footWear');
+            var ddata = JSON.parse(deldata);
+            for (var i = 0; i < ddata.length; i++) {
+                if (ddata[i]['no'] == no) {
+                    ddata.splice(i, 1);
+                }
+            }
+            localStorage.setItem('footWear', JSON.stringify(ddata));
+            displayProducts();
+        }
+
+    </script>
+
+</body>
+
+</html>

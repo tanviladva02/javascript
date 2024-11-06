@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <select id="choice">
+            <option value="M">Monday</option>
+            <option value="T">Tuesday</option>
+            <option value="W">Wednesday</option>
+            <option value="t">Thrusday</option>
+            <option value="f">Friday</option>
+            <option value="S">Saturday</option>
+            <option value="s">Sunday</option>
+        </select>
+        <input type="button" value="Click" onclick="print()">
+        <h1 id="ans"></h1>
+    </form>
+
+    <script>
+        function print()
+        {
+            var choice = document.getElementById('choice').value;
+            if(choice == 'M')
+            {
+                document.getElementById('ans').innerHTML="Today is Monday";
+            }
+            else if(choice == 'T')
+            {
+                document.getElementById('ans').innerHTML="Today is Tuesday";
+            }
+            else if(choice == 'W')
+            {
+                document.getElementById('ans').innerHTML="Today is Wednesday";
+            }
+            else if(choice == 't')
+            {
+                document.getElementById('ans').innerHTML="Today is Thrusday";
+            }
+            else if(choice == 'F')
+            {
+                document.getElementById('ans').innerHTML="Today is Friday";
+            }
+            else if(choice == 'S')
+            {
+                document.getElementById('ans').innerHTML="Today is Saturday";
+            }
+            else if(choice == 's')
+            {
+                document.getElementById('ans').innerHTML="Today is Sunday";
+            }
+            else{
+                document.getElementById('ans').innerHTML="Invalid choice";
+            }
+        }
+    </script>
+</body>
+</html>

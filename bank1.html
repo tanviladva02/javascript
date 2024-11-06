@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        var choice = parseInt(prompt("Press 1 for Deposite Amount . Press 2 for Withdrawal Amount . Press 3 for Knowing Total Bank Balance "));
+
+        var balance = parseInt(prompt("Enter Your Bank Balance..."));
+
+        switch(choice)
+        {
+            case 1:
+                var d = parseInt(prompt("Enter your Deposite Amount..."));
+                d = balance + d ;
+                console.log("Your Deposite Amount is "+d);
+                break;
+            case 2:
+                var w = parseInt(prompt("Enter your Withdrawal Amount..."));
+                w = balance - w ;
+                console.log("Your Withdrawal Amount is "+w);
+                break;   
+            case 3:
+                console.log("total Bank Balance is "+balance);
+                break;
+            default:
+                console.log("Invalid Choice...");         
+        }
+
+    </script>
+
+</body>
+</html>

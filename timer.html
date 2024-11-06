@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width:100%;
+            height:100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #box{
+            width:400px;
+            height:300px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <h1 id="res"></h1> -->
+
+    <div class="main">
+        <div id="box"></div>
+    </div>
+
+    <script>
+
+        // var timer = setTimeout(mytimer , 1000);
+        // function mytimer(){
+        //     document.getElementById('res').innerHTML = "Hello";
+        // }
+
+        // var i = 0;
+        // var timer = setInterval(function(){
+        //     document.getElementById('res').innerHTML = i;
+        //     if(i==11){
+        //         clearInterval(timer);
+        //         alert("Time is over");
+        //     }
+        //     i++;
+        // },1000);
+
+        var color = ["pink","red","skyblue","green","cyan","aqua"];
+        var box = document.querySelector('#box');
+        var i = 0;
+        var colorchange = setInterval(function(){
+            if(i==color.length){
+                i=0;
+            }
+            box.style.backgroundColor = color[i];
+            // box.innerHTML = color[i] + "=" + i;
+            i++;
+        },2000);
+
+        
+
+
+    </script>
+    
+</body>
+</html>

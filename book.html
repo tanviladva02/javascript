@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class book{
+
+            set(n,a,p){
+                this.name = n;
+                this.author = a;
+                this.price = p;
+            }
+            get(){
+                console.log(this.name,this.author,this.price);
+            }
+        }
+        var abc = new book;
+        abc.set("Atomic-habits","steve","300");
+        abc.get();
+        abc.set("sharemarket","johnson","500");
+        abc.get();
+        abc.set("shayri","hetal","700");
+        abc.get();
+        abc.set("love","priyanshi","400");
+        abc.get();
+        abc.set("peace","urvisha","800");
+        abc.get();
+
+    </script>
+    
+</body>
+</html>

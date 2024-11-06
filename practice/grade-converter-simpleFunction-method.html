@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>Enter Marks Of Math's</td>
+            <td><input type="text" placeholder="Enter the marks of math's" id="s1"></td>
+        </tr>
+        <tr>
+            <td>Enter Marks Of English</td>
+            <td><input type="text" placeholder="Enter the marks of English" id="s2"></td>
+        </tr>
+        <tr>
+            <td>Enter Marks Of Economics</td>
+            <td><input type="text" placeholder="Enter the marks of Economics" id="s3"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="submit" onclick="avg()"></td>
+        </tr>
+    </table>
+
+    <h2 id="avg"></h2>
+    <h2 id="grade"></h2>
+
+    <script>
+
+    function avg(){
+
+        var s1 = parseInt(document.getElementById('s1').value);
+        var s2 = parseInt(document.getElementById('s2').value);
+        var s3 = parseInt(document.getElementById('s3').value);
+
+        var avg = (s1 + s2 + s3) / 3;
+        
+        document.getElementById('avg').innerHTML = "Average of the marks is = "+avg;
+
+
+        if(avg <= 33){
+            document.getElementById('grade').innerHTML = "You are pass";
+        }
+        else if(avg <= 60){
+            document.getElementById('grade').innerHTML = "You got B Grade";
+        }
+        else if(avg <= 70){
+            document.getElementById('grade').innerHTML = "You got B+ Grade";
+        }
+        else if(avg <= 80){
+            document.getElementById('grade').innerHTML = "You got A Grade";
+        }
+        else if(avg <= 90){
+            document.getElementById('grade').innerHTML = "You got A+ Grade";
+        }
+        else{
+            document.getElementById("grade").innerHTML = "You are fail";
+        }
+
+    }
+
+    </script>
+    
+</body>
+</html>

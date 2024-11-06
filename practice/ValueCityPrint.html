@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <select id="choice">
+            <option value="S">surat</option>
+            <option value="A">Ahemdabad</option>
+            <option value="P">Pune</option>
+            <option value="G">Goa</option>
+            <option value="D">Delhi</option>
+            <option value="M">Mumbai</option>
+            <option value="R">Rajkot</option>
+        </select>
+    </form>
+
+    <input type="button" value="submit" onclick="city()">
+
+    <h1 id="city"></h1>
+
+    <script>
+
+        function city() {
+
+            var value = document.getElementById('choice').value;
+
+            if (value == "S") {
+                document.getElementById("city").innerHTML = "Surat";
+            }
+            else if (value == "A") {
+                document.getElementById("city").innerHTML = "Ahmedabad";
+            }
+            else if (value == "P") {
+                document.getElementById("city").innerHTML = "Pune";
+            }
+            else if (value == "G") {
+                document.getElementById("city").innerHTML = "Goa";
+            }
+            else if (value == "D") {
+                document.getElementById("city").innerHTML = "Delhi";
+            }
+            else if (value == "M") {
+                document.getElementById("city").innerHTML = "Mumbai";
+            }
+            else {
+                document.getElementById("city").innerHTML = "Rajkot";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

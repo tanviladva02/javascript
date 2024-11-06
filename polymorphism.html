@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class a{
+            add(){
+                console.log("Hello world");
+            }
+        }
+        
+        class b extends a{
+            add(){
+                console.log(5+5);
+            }
+        }
+
+        class c extends b{
+            add(){
+                console.log("How are you ...");
+            }
+        }
+
+        var abc1 = new a;
+        abc1.add();
+
+        var abc2 = new b;
+        abc2.add();
+
+        var abc3 = new c;
+        abc3.add();
+
+    </script>
+    
+</body>
+</html>

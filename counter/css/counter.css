@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.timer-inner{
+    /* background:url(https://cdn.dribbble.com/users/2156796/screenshots/19992280/media/7d2ee3a4d15d1f335419059066067694.gif); */
+    width: 100%;
+    height: 100vh;
+}
+.timer-main{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+h1{
+    color:rgb(27, 27, 44);
+    padding: 10px;
+    display: inline-block;
+}
+button{
+    border: none;
+    padding:10px 12px;  
+}
+.btn-blue{
+    background-color:rgba(51, 51, 238,0.5);
+}
+.btn-yellow{
+    background-color:rgba(216, 238, 51, 0.5);
+}
+.btn-green{
+    background-color: rgba(51, 238, 60, 0.5);
+}

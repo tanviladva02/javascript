@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <select id="getImg">
+        <option value="">-- select --</option>
+        <option value="pug">Priyanshi</option>
+        <option value="borzoi">Kukdi</option>
+        <option value="boxer">Hetal</option>
+        <option value="briard">Kavita</option>
+        <option value="bluetick">Keyuri</option>
+        <option value="lhasa">Tanvi</option>
+        <option value="shiba">Urvisha</option>
+        <option value="samoyed">Swati</option>
+    </select>
+
+    <input type="submit" value="click" onclick="getres()">
+
+    <div id="res"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        function getres(){
+            var getImg = document.getElementById("getImg").value;
+            $.ajax({
+                url : "https://dog.ceo/api/breed/"+getImg+"/images",
+                type : "GET",
+                success : function(data){
+                    console.log(data.message);
+                    var img = "";
+                    for(var i = 0;i < data.message.length;i++){
+                        img += "<img src='"+data.message[i]+"' width='300px' height='300px' style='object-fit:cover;'/>";
+                        document.getElementById('res').innerHTML = img;
+                    }
+                }
+                
+
+            })
+        }
+
+    </script>
+    
+</body>
+</html>
